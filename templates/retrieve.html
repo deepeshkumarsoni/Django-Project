@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Product Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    th,td{
+        padding: 10px 20px;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
+<body>
+ {% if products %}
+     <center>
+     <h2> Product Details </h2>
+         <table border="3px">
+             <thead>
+             <tr>
+                 <th> Product_ID   </th>
+                 <th> Product_Name </th>
+                 <th> Product_Cost </th>
+                 <th> Product_Color</th>
+                 <th> Product_Class</th>
+             </tr>-
+             </thead>
+             {% for i in products %}
+             <tbody>
+             <tr>
+                 <th> {{ i.P_id }}   </th>
+                 <th> {{ i.P_name }} </th>
+                 <th> {{ i.P_cost }} </th>
+                 <th> {{ i.P_color }}</th>
+                 <th> {{ i.P_class }}</th>
+             </tr>
+             </tbody>
+             {% endfor %}
+         </table>
+     </center>
+     {% else %}
+     <h2> Product Are Not Available </h2>
+ {% endif %}
+</body>
+</html>
